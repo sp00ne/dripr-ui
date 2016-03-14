@@ -7,9 +7,13 @@ import {ActionTypes} from '../../constants';
 import Dropzone from 'react-dropzone';
 import urlDropIcon from 'file!../../assets/img/dropicon.png'
 import Loader from '../components/home/loader';
+import ProtectedComponent from '../components/ProtectedComponent';
 
 @connect(state => {
-    return {files: state.files};
+    return {
+      app: state.app,
+      files: state.files
+    };
 }, (dispatch) => ({dispatch, updatePath}))
 export default class Home extends React.Component {
     static propTypes = {
@@ -98,4 +102,13 @@ Home.contextTypes = {
 Home.onEnterLogout = store => (nextState, replaceState, callback) => {
     store.dispatch({type: ActionTypes.USER_LOGOUT});
     window.location = "/"
+};
+
+Home.onEnterReqAuth = store => (nextState, replaceState, callback) => {
+  let loggedIn = store.getState().app.loggedIn;
+  if (!loggedIn) {
+    replaceState({ nextPathname: nextState.location.pathname }, '/login')
+  }
+
+  callback()
 };

@@ -2,10 +2,10 @@ import React from 'react';
 import {renderToString, renderToStaticMarkup} from 'react-dom/server';
 import {match, RoutingContext} from 'react-router';
 import getRoutes from './routes';
-import cookie from 'cookie'
+import cookie from 'cookie';
 import HtmlDocument from './components/HtmlDocument';
 import configureStore from './store/configureStore.prod';
-import Root from './components/Root.prod';
+import Root from './components/Root';
 import apiClient from './apiClient';
 
 /**

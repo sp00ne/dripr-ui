@@ -741,7 +741,7 @@ color: #c7d3e3;
 }
 
 * {
-  box-sizing: border-box;
+/*  box-sizing: border-box; */
 }
 
 html {
@@ -868,41 +868,6 @@ input {
   width: 90%;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 body{
   background-color: #1B232E;
 }
@@ -915,17 +880,22 @@ body{
   padding: 10px;
   border-radius: 3px;
   -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.33);
--moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.33);
-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.33);
+  -moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.33);
+  box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.33);
 }
+
 .lb-header{
   position:relative;
   color: #777;
-  margin: 5px 5px 10px 5px;
+  width: 100%;
+  display: block;
   padding-bottom:10px;
   border-bottom: 1px solid #777;
   text-align:center;
-  height:28px;
+}
+.lb-header h2 {
+  font-weight: normal;
+  margin: 10px;
 }
 .lb-header a{
   margin: 0 25px;
@@ -974,10 +944,9 @@ box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.33);
 }
 .email-login,.email-signup{
   position:relative;
-  float: left;
   width: 100%;
   height:auto;
-  margin-top: 20px;
+  margin-top: 40px;
   text-align:center;
 }
 .u-form-group{
@@ -1012,6 +981,12 @@ box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.33);
   padding: 14px 0;
   border-radius: 2px;
   text-transform: uppercase;
+  -webkit-transition:all 0.3s ease-out;
+  -moz-transition:all 0.3s ease-out;
+  transition:all 0.3s ease-out;
+}
+.u-form-group button:hover {
+  background-color: #36D368; /* LIGHTENED 10% of #1CB94E */
 }
 .u-form-group select{
   height: 44px;
@@ -1036,11 +1011,9 @@ box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.33);
 
 
 .home-box{
-  height: 290px;
-  margin: 10px auto;
+  margin: 100px auto;
   width: 80%;
   background-color: #353B44;
-  padding: 40px;
   border-radius: 3px;
   -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.33);
 -moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.33);
@@ -1061,7 +1034,7 @@ box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.33);
 
 .inner-box {
   text-align: center;
-  padding-top: 20px;
+  padding: 70px 40px;
 }
 .right-inner {
   padding: 0px 40px;

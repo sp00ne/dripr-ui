@@ -8,11 +8,14 @@ import urlDropIcon from 'file!../../assets/img/dropicon.png'
 import nodeify from 'nodeify';
 import moment from 'moment';
 import File from '../components/list/file'
-@connect(state => {
+
+@connect(
+  state => {
     return {
       data: state.data.data
     };
-}, {updatePath})
+  }, {updatePath}
+)
 export default class List extends React.Component {
     static propTypes = {
         data: PropTypes.array.isRequired,

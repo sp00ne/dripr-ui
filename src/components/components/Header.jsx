@@ -9,19 +9,9 @@ import nodeify from 'nodeify';
 
 import config from '../../../config';
 
-@connect(state => {
-  return {...state}}, (dispatch) => ({dispatch}))
+@connect(state => {return {...state}}, (dispatch) => ({dispatch}))
 export default class Header extends React.Component {
   static propTypes = {
-  }
-  responseFacebook(data) {
-      nodeify(this.props.dispatch(loginFacebook(data)), (err, result) => {
-          if (result && result.type === 'LOGIN_SUCCESS') {
-              window.location = "/";
-          }
-          // MANAGE ERRORS
-      });
-
   }
     constructor (props, context) {
       super(props, context);

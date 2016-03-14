@@ -6,7 +6,7 @@ import nodeify from 'nodeify';
 import FacebookLogin from 'react-facebook-login2';
 import LoginForm from '../components/login/login';
 import SignupForm from '../components/login/signup';
-import config from '../../../config';
+//import config from '../../../config';
 
 @connect(null, (dispatch) => ({dispatch}))
 export default class Login extends React.Component {
@@ -29,16 +29,23 @@ export default class Login extends React.Component {
         };
     }
 
+    /*
+      This function is not active - no signing up is currently active
+      should be inserted in lb-header div
+     */
+    signUpHeader() {
+      return(
+        <a href="#" className={this.state.selected === 'signup' && 'active'} id="signup-box-link" onClick={this.signupClicked}>Sign Up</a>
+      );
+    }
+    // Place this in lb-header in case you want to have sign up as well as log in
+    /*<a href="#" className={this.state.selected === 'login' && 'active'} id="login-box-link" onClick={this.loginClicked}>Login</a>*/
     render() {
         return (
             <div>
                 <div className="login-box">
                     <div className="lb-header">
-                        <a href="#" className={this.state.selected === 'login' && 'active'} id="login-box-link" onClick={this.loginClicked}>Login</a>
-                        <a href="#" className={this.state.selected === 'signup' && 'active'} id="signup-box-link" onClick={this.signupClicked}>Sign Up</a>
-                    </div>
-                    <div className="social-login">
-                        <FacebookLogin appId={config.facebookToken} autoLoad={false} callback={this.responseFacebook.bind(this)} scope="public_profile, email" fields="email,name" size="small"/>
+                        <h2>Login</h2>
                     </div>
                     {this.state.selected === 'login' && <LoginForm/>}
                     {this.state.selected === 'signup' && <SignupForm/>}

@@ -2,7 +2,7 @@ import React, {PropTypes} from 'react';
 import moment from 'moment';
 import {Link} from 'react-router';
 
-export default class Login extends React.Component {
+export default class File extends React.Component {
   static propTypes = {
     data: PropTypes.object.isRequired
   }
