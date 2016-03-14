@@ -893,8 +893,8 @@ body{
   border-bottom: 1px solid #777;
   text-align:center;
 }
-.lb-header h2 {
-  font-weight: normal;
+.lb-header h1 {
+  font-weight: 100;
   margin: 10px;
 }
 .lb-header a{

@@ -5,6 +5,7 @@ import List from './components/pages/List';
 import File from './components/pages/File';
 import About from './components/pages/About';
 import NotFound from './components/pages/NotFound';
+
 export default function getRoutes(store) {
   return {
     component: App,
@@ -27,10 +28,6 @@ export default function getRoutes(store) {
         path: '/list',
         component: List,
         onEnter: List.onEnter(store)
-      },
-      {
-        path: '/about',
-        component: About,
       },
       {
         path: '/file/:id',

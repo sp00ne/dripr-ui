@@ -36,7 +36,7 @@ export default class HtmlDocument extends React.Component {
           <title>{app.title}</title>
           <meta name="google-site-verification" content="x0BVFv1kzbxAKxKNFc2uFscZw4HkTcwfxoUMsQISOAk" />
           <meta httpEquiv='X-UA-Compatible' content='IE=edge'/>
-          <link href='//fonts.googleapis.com/css?family=Roboto:400,300italic,300' rel='stylesheet' type='text/css' />
+          <link href='//fonts.googleapis.com/css?family=Roboto:100,400,300italic,300' rel='stylesheet' type='text/css' />
           {head.title.toComponent()}
           {head.meta.toComponent()}
           {head.link.toComponent()}

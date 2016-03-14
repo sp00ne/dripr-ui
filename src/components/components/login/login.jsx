@@ -3,9 +3,16 @@ import {connect} from 'react-redux';
 import {updatePath} from 'redux-simple-router';
 import {login} from '../../../actions/users';
 import nodeify from 'nodeify';
+import LaddaButton from 'react-ladda';
+
+import '../../../assets/css/ladda.min.css';
 
 
-@connect(null, (dispatch) => ({dispatch, updatePath}))
+@connect(state => {
+  return {
+    loading: state.app.loading
+  };
+}, (dispatch) => ({dispatch, updatePath}))
 export default class Login extends React.Component {
   constructor(props, context) {
     super(props, context);
@@ -19,7 +26,7 @@ export default class Login extends React.Component {
     return (
       <form className="email-login">
         <div className="u-form-group">
-          <input type="email" placeholder="Email"  value={this.state.inputEmail}
+          <input type="email" placeholder="Email" value={this.state.inputEmail}
           onChange={this.handleEmailChange}/>
         </div>
         <div className="u-form-group">
@@ -27,7 +34,11 @@ export default class Login extends React.Component {
           onChange={this.handlePasswordChange}/>
         </div>
         <div className="u-form-group">
-          <button>Log in</button>
+          <LaddaButton
+            loading={this.props.loading}
+            onClick={this.handleSubmit}>
+            Log in
+          </LaddaButton>
         </div>
       </form>
 

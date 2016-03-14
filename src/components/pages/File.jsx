@@ -16,7 +16,8 @@ import ViewerPdf from '../components/viewers/Pdf'
 @connect(state => {
   return {
     file: state.files.data
-}}, {
+  };
+}, {
   updatePath
 })
 export default class File extends React.Component {

@@ -57,5 +57,10 @@ export default class List extends React.Component {
 
 
 List.onEnter = store => (nextState, replaceState, callback) => {
-  nodeify(store.dispatch(getData()), callback);
+  if (store.getState().app.loggedIn){
+    nodeify(store.dispatch(getData()), callback);
+  } else {
+    replaceState({ nextPathname: nextState.location.pathname }, '/login')
+  }
+  callback()
 };

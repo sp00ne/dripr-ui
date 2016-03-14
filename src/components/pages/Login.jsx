@@ -6,7 +6,7 @@ import nodeify from 'nodeify';
 import FacebookLogin from 'react-facebook-login2';
 import LoginForm from '../components/login/login';
 import SignupForm from '../components/login/signup';
-//import config from '../../../config';
+
 
 @connect(null, (dispatch) => ({dispatch}))
 export default class Login extends React.Component {
@@ -45,7 +45,7 @@ export default class Login extends React.Component {
             <div>
                 <div className="login-box">
                     <div className="lb-header">
-                        <h2>Login</h2>
+                        <h1>Login</h1>
                     </div>
                     {this.state.selected === 'login' && <LoginForm/>}
                     {this.state.selected === 'signup' && <SignupForm/>}

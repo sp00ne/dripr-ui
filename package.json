@@ -4,8 +4,8 @@
   "description": "Upload interface for voucher .csv files",
   "license": "MIT",
   "scripts": {
-    "build": "NODE_ENV=production webpack --stats --progress",
-    "dev": "NODE_ENV=development webpack --watch --config webpack/server.js & NODE_ENV=development node index",
+    "build": "NODE_ENV=production webpack -p --stats --progress",
+    "dev": "NODE_ENV=development webpack -d --watch --config webpack/server.js & NODE_ENV=development node index",
     "eslint": "eslint ./src --ext .js,.jsx",
     "jscs": "jscs .",
     "start": "NODE_ENV=production node index"
@@ -38,6 +38,7 @@
     "react-h5-video": "^1.0.0",
     "react-helmet": "^2.3.1",
     "react-highlight": "^0.6.1",
+    "react-ladda": "^4.0.1",
     "react-player": "^0.5.4",
     "react-redirect": "^1.0.0",
     "react-redux": "^4.0.0",
